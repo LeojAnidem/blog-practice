@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Boring Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.css">
 </head>
 
 <style>
-    body{
-        display: grid;
-        place-items: center;
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        border: 0;
 
-        width: 100%;
-        height: 100vh;
+        text-decoration: none;
+    }
+
+    body{
+        position: relative;
+        /* overflow: hidden; */
+
+        display: grid;
+        grid-template-columns: minmax(230px, 10%) 1fr;
+
+        min-height: 100vh;
 
         background: #272727;
         color: #eaeaea;
@@ -22,55 +35,190 @@
         font-size: 20px;
     }
 
-    .father{
+    aside{
+        padding: 0 1.2rem;
+        padding-top: 40px;
+        border-right: 1px solid #5c5c5c;
+
         display: flex;
-        justify-content: center;
-        
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+        width: 100%;
+
+        background: #1d1d1d;
+    }
+
+    .header-links{
+        display: flex;
+        flex-direction: column;
+
         width: 100%;
     }
 
-    div[class*='child-']{
-        padding: 20px;
+    .link{
+        position: relative;
+        
+        padding: 1rem;
+        border-radius: 5px;
 
-        flex: 1 1 200px;
-
-        background: #f66522;
-        border: 4px solid #272727;
-
-        text-align: center;
+        color: #9f9f9f;
     }
 
-    div[class*='child-']:nth-child(odd){
-        background: #63d663;
+    .link--active{
+        color: #eaeaea;
     }
 
-    div[class*='child-']:nth-child(1){
+    .link--active::before{
+        content: '';
+        position: absolute;
+        top: 25%;
+        left: -1.3rem;
+
+        width: .5rem;
+        height: 50%;
+
+        border-radius: 20px;
+        background: #43eded;
     }
-    
-    div[class*='child-']:nth-child(2){
-        /* flex-grow: 1;
-        flex-shrink: 10; */
 
-        /*
-            flex: [flex-grow] [flex-shrink] [flex-basis];
-        */
-
-        flex: 1 10 200px;
+    .link:hover{
+        background: #5c5c5c;
     }
 
-    div[class*='child-']:nth-child(3){
+    main{
+        overflow-y: scroll;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        width: 100%;
+        max-height: 100vh;
+    }
+
+    .content{
+        margin: 0 auto;
+        padding: 40px;
+        
+        flex-grow: 1;
+
+        max-width: 1100px;
+    }
+
+    footer{
+        margin: 0 auto;
+        padding: 40px;
+
+        max-width: 1100px;
+    }
+
+    .blogs{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 4rem;
+    }
+
+    .blog{
+        padding: 1rem;
+        border: 2px dotted #5c5c5c;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .blog > img{
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
     }
 
 </style>
-
 <body>
-    <div class="father">
-        <div class="child-1">1</div>
-        <div class="child-2">2</div>
-        <div class="child-3">3</div>
-        <div class="child-4">4</div>
-        <div class="child-5">5</div>
-        <div class="child-6">6</div>
-    </div> 
+    <aside>
+        <header>
+            <i class="fa-solid fa-aperture" style="color: #43eded;"></i>
+            <span>Apertures Blog</span>
+        </header>
+
+        <section class="header-links">
+            <a href="#" class="link link--active">
+                <i class="fa-solid fa-book"></i>
+                <span>Blogs</span>
+            </a>
+            <a href="#" class="link">
+                <i class="fa-regular fa-circle-plus"></i>
+                <span>New blog</span>
+            </a>
+            <a href="#" class="link">
+                <i class="fa-solid fa-stars"></i>
+                <span>Featured</span>
+            </a>
+            <a href="#" class="link">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+        </section>
+    </aside>
+
+    <main>
+        <section class="content">
+            <div class="blogs">
+                <div class="blog">
+                    <h1>News</h1>
+                    <img src="./Assets/img/img.png" alt="blog-img">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Nam minus provident ipsam modi sed accusamus, magni quod 
+                        non explicabo nostrum ab molestiae pariatur quidem quo 
+                        consequuntur nemo dolor harum nisi...
+                        
+                        <a href="#">See more</a>
+                    </p>
+                </div>
+                <div class="blog">
+                    <h1>News</h1>
+                    <img src="./Assets/img/img.png" alt="blog-img">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Nam minus provident ipsam modi sed accusamus, magni quod 
+                        non explicabo nostrum ab molestiae pariatur quidem quo 
+                        consequuntur nemo dolor harum nisi...
+                        
+                        <a href="#">See more</a>
+                    </p>
+                </div>
+                <div class="blog">
+                    <h1>News</h1>
+                    <img src="./Assets/img/img.png" alt="blog-img">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Nam minus provident ipsam modi sed accusamus, magni quod 
+                        non explicabo nostrum ab molestiae pariatur quidem quo 
+                        consequuntur nemo dolor harum nisi...
+                        
+                        <a href="#">See more</a>
+                    </p>
+                </div>
+                <div class="blog">
+                    <h1>News</h1>
+                    <img src="./Assets/img/img.png" alt="blog-img">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Nam minus provident ipsam modi sed accusamus, magni quod 
+                        non explicabo nostrum ab molestiae pariatur quidem quo 
+                        consequuntur nemo dolor harum nisi...
+                        
+                        <a href="#">See more</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span>©️ Copyright All rights reserved</span>
+        </footer>
+    </main>
 </body>
 </html>
