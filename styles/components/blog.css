@@ -1,0 +1,27 @@
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+}
+
+.blog{
+    padding: 1rem;
+    border: 2px dotted #5c5c5c;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog__img{
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.blog__link{
+    color: #43eded;
+}
+
+.blog__link:hover{
+    color: #00dde1;
+}
